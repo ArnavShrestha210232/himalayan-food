@@ -1,6 +1,6 @@
 import 'package:eccomerce/helper/custom_button_homepage.dart';
+import 'package:eccomerce/helper/custom_rating.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class Custom_Grid extends StatelessWidget {
   final Axis axisDirection;
@@ -97,15 +97,23 @@ class Custom_Grid extends StatelessWidget {
                   // Image(
                   //   image: AssetImage(data[index]['image']),
                   // ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(15),
-                        topRight: Radius.circular(15)),
-                    child: Image(
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, 'description');
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15),
+                          topRight: Radius.circular(15)),
+                      child: Image(
                         height: 130,
                         width: 170,
                         fit: BoxFit.cover,
-                        image: AssetImage(data[index]['image'])),
+                        image: AssetImage(
+                          data[index]['image'],
+                        ),
+                      ),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 8),
@@ -144,21 +152,10 @@ class Custom_Grid extends StatelessWidget {
                       ],
                     ),
                   ),
-                  RatingBar.builder(
-                      itemSize: 25,
-                      initialRating: 3.5,
-                      minRating: 1,
-                      direction: Axis.horizontal,
-                      allowHalfRating: true,
-                      itemCount: 5,
-                      itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                      itemBuilder: (context, _) => Icon(
-                            Icons.star,
-                            color: Colors.amber,
-                          ),
-                      onRatingUpdate: (rating) {
-                        print(rating);
-                      }),
+                  Rating_Builder(
+                    itemSize: 25,
+                    itemPadding: EdgeInsets.symmetric(horizontal: 4),
+                  ),
 
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),

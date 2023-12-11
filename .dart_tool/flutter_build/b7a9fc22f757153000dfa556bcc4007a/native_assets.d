@@ -1,0 +1,1 @@
+ /home/arnav/himalayan-food/.dart_tool/flutter_build/b7a9fc22f757153000dfa556bcc4007a/native_assets.yaml: 

@@ -6,6 +6,7 @@ class Custom_Button_Homepage extends StatelessWidget {
   final double? height;
   final double? minWidth;
   final void Function()? onPressed;
+  final double? fontSize;
 
   const Custom_Button_Homepage({
     super.key,
@@ -13,6 +14,7 @@ class Custom_Button_Homepage extends StatelessWidget {
     this.height,
     this.minWidth,
     this.onPressed,
+    this.fontSize,
   });
 
   @override
@@ -28,9 +30,7 @@ class Custom_Button_Homepage extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: TextStyle(
-          color: ColorConstant.whiteColor,
-        ),
+        style: TextStyle(color: ColorConstant.whiteColor, fontSize: fontSize),
       ),
     );
   }

@@ -501,7 +501,8 @@ class _HomePageState extends State<HomePage> {
                     // color: Colors.red,
 
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 20),
+                      padding:
+                          const EdgeInsets.only(top: 12, left: 12, right: 12),
                       child: Image(
                         image: AssetImage(
                           data2[index]['image'],

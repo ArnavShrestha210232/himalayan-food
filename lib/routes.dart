@@ -1,6 +1,8 @@
 // import 'package:eccomerce/constant/Tabbar.dart';
+
 import 'package:eccomerce/views/ForgotPasswordPage/forgot_page.dart';
 import 'package:eccomerce/views/NavigationPage/SecondaryPages/checkout.dart';
+import 'package:eccomerce/views/NavigationPage/SecondaryPages/descripition.dart';
 import 'package:eccomerce/views/NavigationPage/SecondaryPages/notification.dart';
 import 'package:eccomerce/views/NavigationPage/SecondaryPages/payment.dart';
 import 'package:eccomerce/views/NavigationPage/SecondaryPages/review.dart';
@@ -24,6 +26,7 @@ final routes = {
   'review': (context) => Review(),
   'shop': (context) => Shop(),
   'cart': (context) => CartPage(),
+  'description': (context) => Description(),
   // 'tabbar': (context) => TabBarExample(),
   // 'dashboard': (context) => DashboardPage(),
 };
