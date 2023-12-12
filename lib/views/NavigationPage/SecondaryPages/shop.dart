@@ -17,7 +17,7 @@ class _ShopState extends State<Shop> {
   }
 
   TextEditingController _searchQueryController = TextEditingController();
-  bool _isSearching = true;
+  bool _isSearching = false;
   String searchQuery = "Search query";
   @override
   Widget build(BuildContext context) {
@@ -28,8 +28,13 @@ class _ShopState extends State<Shop> {
         leading: _isSearching
             ? const BackButton()
             : Container(
-                child: Icon(
-                  Icons.arrow_back,
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'bottomnavbar');
+                  },
+                  icon: Icon(
+                    Icons.arrow_back,
+                  ),
                 ),
               ),
         title: _isSearching ? _buildSearchField() : Text('Shop'),

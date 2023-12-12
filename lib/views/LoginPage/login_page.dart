@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
         toolbarHeight: 0.0,
       ),
       body: SingleChildScrollView(
-        physics: NeverScrollableScrollPhysics(),
+        // physics: NeverScrollableScrollPhysics(),
         child: Form(
           key: _formKey,
           child: Column(

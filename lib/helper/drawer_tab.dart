@@ -7,7 +7,8 @@ class DrawerTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      width: 220,
+      // shape: Border.fromBorderSide(BorderSide.none),  //Using this code the border of the drawer gets uncurved
+      width: 250,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [

@@ -13,13 +13,29 @@ class Checkout extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 15, top: 12, bottom: 12),
-              child: Text(
-                'Checkout',
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 25,
-                ),
+              padding: EdgeInsets.only(
+                  left: MediaQuery.sizeOf(context).width * 0.01,
+                  top: MediaQuery.sizeOf(context).height * 0.03,
+                  bottom: MediaQuery.sizeOf(context).height * 0.01),
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(Icons.arrow_back),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: Text(
+                      'Checkout',
+                      style: TextStyle(
+                        color: ColorConstant.blackColor,
+                        fontSize: 25,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             Container(

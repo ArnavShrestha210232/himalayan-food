@@ -1,4 +1,5 @@
 import 'package:eccomerce/constant/color_constant.dart';
+import 'package:eccomerce/helper/custom_button_homepage.dart';
 import 'package:flutter/material.dart';
 
 class Payment extends StatelessWidget {
@@ -13,13 +14,30 @@ class Payment extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 15, top: 12, bottom: 12),
-              child: Text(
-                'Checkout',
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 25,
-                ),
+              padding: EdgeInsets.only(
+                left: MediaQuery.sizeOf(context).width * 0.01,
+                top: MediaQuery.sizeOf(context).height * 0.03,
+                bottom: MediaQuery.sizeOf(context).width * 0.01,
+              ),
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(Icons.arrow_back),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: Text(
+                      'Payment',
+                      style: TextStyle(
+                        color: ColorConstant.blackColor,
+                        fontSize: 25,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             Container(
@@ -101,9 +119,11 @@ class Payment extends StatelessWidget {
               ],
             ),
             Container(
-              padding:
-                  EdgeInsets.only(left: 12, right: 12, top: 30, bottom: 20),
+              padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.sizeOf(context).width * 0.04,
+                  vertical: MediaQuery.sizeOf(context).height * 0.02),
               child: Card(
+                elevation: 3,
                 child: ExpansionTile(
                   collapsedShape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5)),
@@ -148,7 +168,7 @@ class Payment extends StatelessWidget {
                                 children: [
                                   Padding(
                                     padding:
-                                        const EdgeInsets.only(left: 5, top: 20),
+                                        const EdgeInsets.only(left: 5, top: 12),
                                     child: Text(
                                       'FRANCE AUTHENTIC JERSEY 2018 (L) (HOME)',
                                       maxLines: 3,
@@ -158,8 +178,7 @@ class Payment extends StatelessWidget {
                                     ),
                                   ),
                                   Padding(
-                                    padding:
-                                        const EdgeInsets.only(left: 8, top: 8),
+                                    padding: const EdgeInsets.only(left: 8),
                                     child: Text(
                                       'NIKE',
                                       style: TextStyle(
@@ -258,14 +277,24 @@ class Payment extends StatelessWidget {
                                 width: 210,
                                 child: TextFormField(
                                   decoration: InputDecoration(
-                                      prefix:
-                                          Icon(Icons.card_giftcard_outlined),
-                                      hintStyle: TextStyle(fontSize: 15),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Colors.grey.shade400),
-                                        borderRadius: BorderRadius.circular(0),
-                                      )),
+                                    contentPadding: EdgeInsets.symmetric(
+                                        horizontal:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.2),
+                                    prefixIcon:
+                                        Icon(Icons.card_giftcard_outlined),
+                                    hintStyle: TextStyle(fontSize: 15),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Colors.grey.shade400),
+                                      borderRadius: BorderRadius.circular(0),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Colors.grey.shade300),
+                                      borderRadius: BorderRadius.circular(0),
+                                    ),
+                                  ),
                                 ),
                               ),
                               Container(
@@ -410,23 +439,45 @@ class Payment extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(left: 20, bottom: 12),
               child: Text(
-                'Credit or Debit Card',
-                style: TextStyle(fontSize: 15),
+                'Credit or Debit Card Details',
+                style: TextStyle(
+                  fontSize: 17,
+                  color: Colors.grey.shade600,
+                ),
               ),
             ),
             Container(
-              height: 50,
+              height: 60,
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: TextFormField(
+                autofocus: true,
                 decoration: InputDecoration(
-                    prefix: Image(
+                  contentPadding:
+                      EdgeInsets.symmetric(vertical: 16, horizontal: 15),
+                  labelText: 'Credit or Debit Card No.',
+                  labelStyle: TextStyle(color: Colors.grey.shade600),
+                  alignLabelWithHint: false,
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.only(
+                      left: 8.0,
+                      right: 6,
+                    ),
+                    child: Image(
                       image: AssetImage('assets/visa.png'),
                     ),
-                    // prefix: Image(image: AssetImage('images/visa.png')),
-                    hintText: 'XXXX - XXXX - XXXX',
-                    hintStyle: TextStyle(fontSize: 15),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey))),
+                  ),
+                  // prefix: Image(image: AssetImage('images/visa.png')),\
+                  hintText: 'XXXX - XXXX - XXXX',
+                  focusedBorder:
+                      OutlineInputBorder(borderSide: BorderSide(width: 1)),
+                  hintStyle: TextStyle(fontSize: 18),
+                  // enabledBorder: OutlineInputBorder(
+                  //   borderSide: BorderSide(color: Colors.black),
+                  // ),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black),
+                  ),
+                ),
               ),
             ),
 
@@ -454,16 +505,22 @@ class Payment extends StatelessWidget {
             //   ),
             // ),
             Padding(
-              padding: const EdgeInsets.only(left: 20, top: 12),
+              padding: const EdgeInsets.only(
+                left: 20,
+              ),
               child: Text(
                 'Enter card number, expiration date and CVV number',
-                style: TextStyle(fontSize: 12, color: Colors.grey),
+                style: TextStyle(fontSize: 13, color: Colors.grey),
               ),
             ),
             Container(
-              height: 55,
-              width: 320,
-              margin: EdgeInsets.only(left: 20, top: 30),
+              height: MediaQuery.sizeOf(context).height * 0.08,
+              width: MediaQuery.sizeOf(context).width * 0.90,
+              margin: EdgeInsets.only(
+                left: MediaQuery.sizeOf(context).width * 0.05,
+                right: MediaQuery.sizeOf(context).width * 0.05,
+                top: MediaQuery.sizeOf(context).height * 0.03,
+              ),
               child: MaterialButton(
                 elevation: 0,
                 onPressed: () {},
@@ -492,9 +549,11 @@ class Payment extends StatelessWidget {
               ),
             ),
             Container(
-              height: 55,
-              width: 320,
-              margin: EdgeInsets.only(left: 20, top: 15),
+              height: MediaQuery.sizeOf(context).height * 0.08,
+              width: MediaQuery.sizeOf(context).width * 0.90,
+              margin: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.sizeOf(context).width * 0.05,
+                  vertical: MediaQuery.sizeOf(context).height * 0.03),
               child: MaterialButton(
                 elevation: 0,
                 onPressed: () {},
@@ -522,10 +581,12 @@ class Payment extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              margin: EdgeInsets.only(top: 50),
+            Padding(
+              padding: EdgeInsets.only(
+                  left: MediaQuery.sizeOf(context).width * 0.02,
+                  right: MediaQuery.sizeOf(context).width * 0.06),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextButton(
                     onPressed: () {
@@ -536,28 +597,14 @@ class Payment extends StatelessWidget {
                       style: TextStyle(color: Colors.grey, fontSize: 15),
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(bottom: 20, right: 15),
-                    height: 70,
-                    width: 250,
-                    padding: EdgeInsets.only(left: 50, top: 20),
-                    child: MaterialButton(
-                      height: 50,
-                      elevation: 0,
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'review');
-                      },
-                      color: ColorConstant.secondaryColor,
-                      splashColor: ColorConstant.primaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Text(
-                        'Continue to Review',
-                        style: TextStyle(color: Colors.white, fontSize: 15),
-                      ),
-                    ),
-                  ),
+                  Custom_Button_Homepage(
+                    height: 40,
+                    text: 'Continue to Review',
+                    fontSize: 18,
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'review');
+                    },
+                  )
                 ],
               ),
             ),

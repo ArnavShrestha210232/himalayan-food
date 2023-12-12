@@ -21,7 +21,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: true,
         toolbarHeight: 0.0,
       ),
       body: SingleChildScrollView(
@@ -146,27 +146,31 @@ class _SignUpPageState extends State<SignUpPage> {
               SizedBox(
                 height: 15,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  CustomSocialButton(
-                    // buttonText: 'Facebook',
-                    buttonColor: Colors.blue.shade900,
-                    onPressed: () {},
-                    icon: FontAwesomeIcons.facebook,
-                  ),
-                  CustomSocialButton(
-                    buttonColor: Colors.red,
-                    onPressed: () {},
-                    icon: FontAwesomeIcons.google,
-                  ),
-                  CustomSocialButton(
-                    // buttonText: 'Facebook',
-                    buttonColor: Colors.blue.shade400,
-                    onPressed: () {},
-                    icon: FontAwesomeIcons.twitter,
-                  ),
-                ],
+              Padding(
+                padding: EdgeInsets.only(
+                    bottom: MediaQuery.sizeOf(context).height * 0.06),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    CustomSocialButton(
+                      // buttonText: 'Facebook',
+                      buttonColor: Colors.blue.shade900,
+                      onPressed: () {},
+                      icon: FontAwesomeIcons.facebook,
+                    ),
+                    CustomSocialButton(
+                      buttonColor: Colors.red,
+                      onPressed: () {},
+                      icon: FontAwesomeIcons.google,
+                    ),
+                    CustomSocialButton(
+                      // buttonText: 'Facebook',
+                      buttonColor: Colors.blue.shade400,
+                      onPressed: () {},
+                      icon: FontAwesomeIcons.twitter,
+                    ),
+                  ],
+                ),
               ),
               // Row(
               //   mainAxisAlignment: MainAxisAlignment.center,
